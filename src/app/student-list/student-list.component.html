@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <h1>Students</h1>
+  <div class="row">
+      <div class="col-3" *ngFor="let student of studentList">
+          <div class="card mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Name: {{ student.name }}</h5>
+                <h6>Age: {{ student.age }}</h6>
+                <p>ID: {{ student.id }}</p>
+                <p class="card-text">Class: {{ student.class }}</p>
+                <p>Section: {{ student.section }}</p>
+                <p>Address: {{ student.address }}</p>
+                <a routerLink="/student-detail/{{student.id}}" class="btn btn-primary mb-2 d-block">View Student</a>
+                <a routerLink="/edit-student/{{student.id}}" class="btn btn-primary mb-2 d-block">Edit Student</a>
+                <a (click)="deleteStudent(student)" class="btn btn-primary d-block">Delete Student</a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <button class="btn btn-primary" routerLink="../add-student">Add New Student</button>
+</div>
